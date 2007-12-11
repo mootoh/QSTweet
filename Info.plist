@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>TwitterPlugin</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.blacktree.Quicksilver.TwitterPlugin</string>
+	<string>org.deadbeaf.TwitterPlugin</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -15,10 +15,10 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>1B</string>
+	<string>1C</string>
 	<key>NSPrincipalClass</key>
 	<string>TwitterPlugin</string>
-	<key>QSActionsTemplate</key>
+	<key>QSActions</key>
 	<dict>
 		<key>TwitterPluginAction</key>
 		<dict>
@@ -31,7 +31,7 @@
 				<string>TwitterPluginType</string>
 			</array>
 			<key>name</key>
-			<string>Action: TwitterPlugin</string>
+			<string>Twitter</string>
 			<key>validatesObjects</key>
 			<false/>
 		</dict>
@@ -39,11 +39,13 @@
 	<key>QSPlugIn</key>
 	<dict>
 		<key>author</key>
-		<string></string>
+		<string>Motohiro Takayama</string>
 		<key>categories</key>
-		<array/>
+		<array>
+			<string>Web</string>
+		</array>
 		<key>description</key>
-		<string></string>
+		<string>send message quickly to Twitter.</string>
 		<key>icon</key>
 		<string></string>
 		<key>qsversion</key>
@@ -62,7 +64,7 @@
 			<string>TwitterPluginSource</string>
 		</dict>
 	</array>
-	<key>QSRegistrationTemplate</key>
+	<key>QSRegistration</key>
 	<dict>
 		<key>QSActionProviders</key>
 		<dict>
@@ -86,16 +88,16 @@
 		</dict>
 		<key>QSPreferencePanes</key>
 		<dict>
-			<key>TwitterPlugin_PrefPane</key>
+			<key>TwitterPluginPrefPane</key>
 			<dict>
 				<key>class</key>
-				<string>QSPreferencePane</string>
+				<string>TwitterPrefPane</string>
 				<key>description</key>
-				<string>Preferences</string>
+				<string>Twitter Preferences</string>
 				<key>icon</key>
 				<string></string>
 				<key>name</key>
-				<string>TwitterPlugin</string>
+				<string>Twitter option</string>
 			</dict>
 		</dict>
 	</dict>
