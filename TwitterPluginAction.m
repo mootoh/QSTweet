@@ -57,8 +57,8 @@
   NSLog(@"didReceiveResponse 1");
 
   NSDictionary *dicHead = [(NSHTTPURLResponse *)response allHeaderFields];
-  NSLog([dicHead objectForKey:@"Last-Modified"]);
-  //NSLog(@"didReceiveResponse 2");
+  NSLog([dicHead objectForKey:@"Status"]);
+  NSLog(@"didReceiveResponse 2");
   //abort();
 }
 
