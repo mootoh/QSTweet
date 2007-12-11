@@ -17,12 +17,13 @@
   dWithHello = [NSString stringWithFormat:@"%@ hello",[dObject stringValue]];
   result = [QSObject objectWithString:dWithHello];
 
-
-  NSString *content = @"status=post_from_Cocoa_NSURLRequest.";
+  NSString *content = [NSString stringWithFormat:@"status=%@", [dObject stringValue]];
+  NSLog(content);
+  [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   NSURL *url = [NSURL URLWithString:@"http://user:pass@twitter.com/statuses/update.json"];
   NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
   [urlRequest setHTTPMethod:@"POST"];
-  [urlRequest setHTTPBody:[content dataUsingEncoding:NSASCIIStringEncoding]];
+  [urlRequest setHTTPBody:[content dataUsingEncoding:NSUTF8StringEncoding]];
 
   NSURLConnection *theConnection = [NSURLConnection
     connectionWithRequest:urlRequest
