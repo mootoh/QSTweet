@@ -14,7 +14,7 @@
 
 @interface TwitterPluginAction : QSActionProvider
 {
-  NSData *receivedData;
+  id receivedData;
 }
 @end
 

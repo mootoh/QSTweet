@@ -18,35 +18,20 @@
   result = [QSObject objectWithString:dWithHello];
 
 
-  NSString *content = @"post from Cocoa NSURLRequest.";
+  NSString *content = @"status=post_from_Cocoa_NSURLRequest.";
   NSURL *url = [NSURL URLWithString:@"http://user:pass@twitter.com/statuses/update.json"];
   NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
   [urlRequest setHTTPMethod:@"POST"];
   [urlRequest setHTTPBody:[content dataUsingEncoding:NSASCIIStringEncoding]];
 
-  NSLog(@"before");
-
-/*
-  // create the request
-  NSURLRequest *theRequest=[NSURLRequest
-    requestWithURL:[NSURL URLWithString:@"http://www.apple.com/"]
-    cachePolicy:NSURLRequestUseProtocolCachePolicy
-    timeoutInterval:60.0];
-  // create the connection with the request
-  // and start loading the data
-*/
   NSURLConnection *theConnection = [NSURLConnection
     connectionWithRequest:urlRequest
     delegate:self];
   if (theConnection) {
-    // Create the NSMutableData that will hold
-    // the received data
-    // receivedData is declared as a method instance elsewhere
     receivedData = [[NSMutableData data] retain];
     NSLog(@"connected !");
   } else {
     NSLog(@"not connected correctly.");
-    // inform the user that the download could not be made
   }
 
   return result;
@@ -59,7 +44,32 @@
   NSDictionary *dicHead = [(NSHTTPURLResponse *)response allHeaderFields];
   NSLog([dicHead objectForKey:@"Status"]);
   NSLog(@"didReceiveResponse 2");
-  //abort();
+  [receivedData setLength:0];
 }
 
+- (void) connection : (NSURLConnection *) connection
+         didReceiveData : (NSData *) data {
+  NSLog(@"didReceiveData 1 %d", [data length]);
+  
+  [receivedData appendData:data];
+
+  NSLog(@"didReceiveData 2");
+}
+
+ - (void) connection : (NSURLConnection *) connection 
+ 	didFailWithError : (NSError *) error {
+	NSLog(@"didFailWithError 1");
+	// [connection release];
+	// [receivedData release];
+	
+	NSLog(@"didFailWithError 2");
+}
+
+- (void) connectionDidFinishLoading:(NSURLConnection *)connection {
+	NSLog(@"connectionDidFinishLoading: succeeded to load %d bytes", [receivedData length]);
+	[(NSData *)receivedData writeToFile:@"/tmp/connectionDidFinishLoading.log"
+		atomically:YES];
+//	[connection release];
+//	[receivedData release];
+}
 @end
