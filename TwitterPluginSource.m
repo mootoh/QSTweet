@@ -2,7 +2,7 @@
 //  TwitterPluginSource.m
 //  TwitterPlugin
 //
-//  Created by ?? ?? on 12/12/07.
+//  Created by Motohiro Takayama on 12/12/07.
 //  Copyright __MyCompanyName__ 2007. All rights reserved.
 //
 
