@@ -13,14 +13,26 @@
 - (QSObject *)performActionOnObject:(QSObject *)dObject {
   QSObject *result = dObject;
 
+  // construct request body
   NSString *content = [NSString stringWithFormat:@"status=%@", [dObject stringValue]];
   NSLog(content);
   [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-  NSURL *url = [NSURL URLWithString:@"http://user:pass@twitter.com/statuses/update.json"];
+
+  // get screenName/password from PreferencePane
+  id values = [[NSUserDefaultsController sharedUserDefaultsController] values];
+  NSString *screenName = [values valueForKey:@"TwitterPreference.screenName"];
+  NSString *password   = [values valueForKey:@"TwitterPreference.password"];
+  NSLog(@"screenName:%@, password:%@", screenName, password);
+
+  // construct request
+  NSString *urlString = [NSString stringWithFormat:
+    @"http://%@:%@@twitter.com/statuses/update.json", screenName, password];
+  NSURL *url = [NSURL URLWithString:urlString];
   NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
   [urlRequest setHTTPMethod:@"POST"];
   [urlRequest setHTTPBody:[content dataUsingEncoding:NSUTF8StringEncoding]];
 
+  // connect it
   NSURLConnection *theConnection = [NSURLConnection
     connectionWithRequest:urlRequest
     delegate:self];
@@ -33,6 +45,7 @@
   return result;
 }
 
+// callbacks
 - (void) connection : (NSURLConnection *) connection
          didReceiveResponse : (NSURLResponse *) response {
   NSDictionary *dicHead = [(NSHTTPURLResponse *)response allHeaderFields];
