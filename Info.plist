@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>3F</string>
+	<string>40</string>
 	<key>NSPrincipalClass</key>
 	<string>TwitterPlugin</string>
 	<key>QSActions</key>
@@ -134,5 +134,12 @@
 			</dict>
 		</array>
 	</dict>
+  <key>QSDefaults</key>
+  <dict>
+    <key>interface.screen_name</key>
+    <string>twitter</string>
+    <key>interface.password</key>
+    <string>pass</string>
+  </dict>
 </dict>
 </plist>

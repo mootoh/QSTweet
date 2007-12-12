@@ -10,12 +10,8 @@
 
 @implementation TwitterPluginAction
 
-- (QSObject *)performActionOnObject:(QSObject *)dObject{
-  QSObject *result;
-  NSString *dWithHello;
-
-  dWithHello = [NSString stringWithFormat:@"%@ hello",[dObject stringValue]];
-  result = [QSObject objectWithString:dWithHello];
+- (QSObject *)performActionOnObject:(QSObject *)dObject {
+  QSObject *result = dObject;
 
   NSString *content = [NSString stringWithFormat:@"status=%@", [dObject stringValue]];
   NSLog(content);
@@ -30,7 +26,6 @@
     delegate:self];
   if (theConnection) {
     receivedData = [[NSMutableData data] retain];
-    NSLog(@"connected !");
   } else {
     NSLog(@"not connected correctly.");
   }
@@ -40,21 +35,14 @@
 
 - (void) connection : (NSURLConnection *) connection
          didReceiveResponse : (NSURLResponse *) response {
-  NSLog(@"didReceiveResponse 1");
-
   NSDictionary *dicHead = [(NSHTTPURLResponse *)response allHeaderFields];
   NSLog([dicHead objectForKey:@"Status"]);
-  NSLog(@"didReceiveResponse 2");
   [receivedData setLength:0];
 }
 
 - (void) connection : (NSURLConnection *) connection
          didReceiveData : (NSData *) data {
-  NSLog(@"didReceiveData 1 %d", [data length]);
-  
   [receivedData appendData:data];
-
-  NSLog(@"didReceiveData 2");
 }
 
  - (void) connection : (NSURLConnection *) connection 
