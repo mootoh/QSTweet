@@ -15,14 +15,14 @@
 
   // construct request body
   NSString *content = [NSString stringWithFormat:@"status=%@", [dObject stringValue]];
-  NSLog(content);
+  //NSLog(content);
   [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
   // get screenName/password from PreferencePane
   id values = [[NSUserDefaultsController sharedUserDefaultsController] values];
   NSString *screenName = [values valueForKey:@"TwitterPreference.screenName"];
   NSString *password   = [values valueForKey:@"TwitterPreference.password"];
-  NSLog(@"screenName:%@, password:%@", screenName, password);
+  //NSLog(@"screenName:%@, password:%@", screenName, password);
 
   // construct request
   NSString *urlString = [NSString stringWithFormat:
@@ -39,7 +39,7 @@
   if (theConnection) {
     receivedData = [[NSMutableData data] retain];
   } else {
-    NSLog(@"not connected correctly.");
+    //NSLog(@"not connected correctly.");
   }
 
   return result;
@@ -60,18 +60,15 @@
 
  - (void) connection : (NSURLConnection *) connection 
  	didFailWithError : (NSError *) error {
-	NSLog(@"didFailWithError 1");
+	//NSLog(@"didFailWithError 1");
 	// [connection release];
-	// [receivedData release];
-	
-	NSLog(@"didFailWithError 2");
+	[receivedData release];	
+	//NSLog(@"didFailWithError 2");
 }
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
-	NSLog(@"connectionDidFinishLoading: succeeded to load %d bytes", [receivedData length]);
-	[(NSData *)receivedData writeToFile:@"/tmp/connectionDidFinishLoading.log"
-		atomically:YES];
+//	NSLog(@"connectionDidFinishLoading: succeeded to load %d bytes", [receivedData length]);
 //	[connection release];
-//	[receivedData release];
+	[receivedData release];
 }
 @end
