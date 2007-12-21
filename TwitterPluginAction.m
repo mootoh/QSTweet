@@ -14,7 +14,7 @@
   QSObject *result = dObject;
 
   // construct request body
-  NSString *content = [NSString stringWithFormat:@"status=%@", [dObject stringValue]];
+  NSString *content = [NSString stringWithFormat:@"source=QSTwitter&status=%@", [dObject stringValue]];
   //NSLog(content);
   [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
