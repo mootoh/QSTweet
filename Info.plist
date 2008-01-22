@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>60</string>
+	<string>72</string>
 	<key>NSPrincipalClass</key>
 	<string>TwitterPlugin</string>
 	<key>QSActions</key>
@@ -30,6 +30,8 @@
 			<array>
 				<string>*</string>
 			</array>
+			<key>icon</key>
+			<string>girl_square</string>
 			<key>name</key>
 			<string>Twitter</string>
 			<key>validatesObjects</key>
@@ -54,7 +56,7 @@
 		<key>description</key>
 		<string>send message quickly to Twitter.</string>
 		<key>icon</key>
-		<string></string>
+		<string>girl_square</string>
 		<key>qsversion</key>
 		<string>29CC</string>
 		<key>relatedBundles </key>
@@ -102,7 +104,7 @@
 				<key>description</key>
 				<string>Twitter Preferences</string>
 				<key>icon</key>
-				<string></string>
+				<string>girl_square</string>
 				<key>name</key>
 				<string>Twitter option</string>
 			</dict>
@@ -140,6 +142,16 @@
 				<string></string>
 			</dict>
 		</array>
+	</dict>
+	<key>QSResourceAdditions</key>
+	<dict>
+		<key>girl_square</key>
+		<dict>
+			<key>bundle</key>
+			<string>org.deadbeaf.TwitterPlugin</string>
+			<key>resource</key>
+			<string>girl_square.icns</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

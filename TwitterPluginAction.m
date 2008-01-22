@@ -15,8 +15,9 @@
 
   // construct request body
   NSString *content = [NSString stringWithFormat:@"source=QSTwitter&status=%@", [dObject stringValue]];
-  //NSLog(content);
-  [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  content = [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  content = [content stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+
 
   // get screenName/password from PreferencePane
   id values = [[NSUserDefaultsController sharedUserDefaultsController] values];
