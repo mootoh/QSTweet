@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>9F</string>
+	<string>B7</string>
 	<key>NSPrincipalClass</key>
 	<string>RCLoader</string>
 	<key>QSActions</key>
@@ -62,13 +62,13 @@
 		<key>relatedBundles </key>
 		<array/>
 	</dict>
-	<key>QSPresetAdditionsTemplate</key>
+	<key>QSPresetAdditions</key>
 	<array>
 		<dict>
 			<key>ID</key>
 			<string>QSPresetTwitterPlugin</string>
 			<key>name</key>
-			<string>TwitterPlugin</string>
+			<string>Twitter following</string>
 			<key>source</key>
 			<string>TwitterPluginSource</string>
 		</dict>
