@@ -15,9 +15,9 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>72</string>
+	<string>9F</string>
 	<key>NSPrincipalClass</key>
-	<string>TwitterPlugin</string>
+	<string>RCLoader</string>
 	<key>QSActions</key>
 	<dict>
 		<key>TwitterPluginAction</key>
@@ -25,7 +25,7 @@
 			<key>actionClass</key>
 			<string>TwitterPluginAction</string>
 			<key>actionSelector</key>
-			<string>performActionOnObject:</string>
+			<string>post:</string>
 			<key>directTypes</key>
 			<array>
 				<string>*</string>
