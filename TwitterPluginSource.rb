@@ -4,15 +4,20 @@ require 'rubygems'
 require 'json'
 
 class TwitterPluginSource < OSX::QSObjectSource
-  @friends = []
+  @@count = 0
+  FRIENDS = File.dirname(__FILE__) + '/friends.dat'
+
+  def initialize
+    super
+    @friends = File.exist?(FRIENDS) ?  Marshal.load(open(FRIENDS)) : []
+  end
 
   def indexIsValidFromDate_forEntry(index, entry)
     true
   end
 
-  def iconForEntry(dict)
-    Shared.logger.info(dict.class.to_s)
-    nil
+  def iconForEntry(dict) # dict.keys => name, source, ID, bundle
+    OSX::QSResourceManager.imageNamed('girl_square')
   end
 
 =begin
@@ -30,42 +35,50 @@ class TwitterPluginSource < OSX::QSObjectSource
     screen_name = dict.valueForKey("TwitterPreference.screenName")
     password    = dict.valueForKey("TwitterPreference.password")
 
-    url = 'http://' + screen_name + ':' + password +
-          '@twitter.com/statuses/friends/' + screen_name +
-          '.json'
-    Shared.logger.info(url)
-
     @friends = []
     objects = []
-    begin
-      @friends = JSON.parse(open(url).read)
-      @friends.each do |j|
-        obj = OSX::QSObject.objectWithName(j['name'])
+    count = 1
+
+    while true
+      url = 'http://' + screen_name + ':' + password +
+            '@twitter.com/statuses/friends/' + screen_name + '.json'
+
+      if count > 1
+        url += '?page=' + count.to_s
+      end
+      count += 1
+
+      friends = JSON.parse(open(url).read)
+      friends.each do |friend|
+        obj = OSX::QSObject.objectWithName(friend['screen_name'])
         obj.setObject_forType('', 'TwitterPluginType')
         obj.setPrimaryType('TwitterPluginType')
         objects.push(obj)
       end
+
+      @friends += friends
+
+      break if (friends.size < 100)
     end
+    @friends.uniq!
+    Marshal.dump(@friends, open(FRIENDS, 'w'))
     objects
   end
 
   # Object Handler Methods
 
   def setQuickIconForObject(object)
-    # An icon that is either already in memory or easy to load
-    if @friends
-      her = @friends.find {|x| x['name'] == object.name.to_s}
-      object.setIcon(OSX::NSImage.alloc.initWithContentsOfURL(OSX::NSURL.URLWithString(her['profile_image_url'])))
-    end
+    object.setIcon(nil) 
   end
 
-=begin
-- (BOOL)loadIconForObject:(QSObject *)object{
-        return NO;
-    id data=[object objectForType:kTwitterPluginType];
-        [object setIcon:nil];
-    return YES;
-}
-*/
-=end
+  def loadIconForObject(object)
+    return false unless @friends
+
+    her = @friends.find {|x| x['screen_name'] == object.name.to_s}
+    img = OSX::NSImage.alloc.initWithContentsOfURL(OSX::NSURL.URLWithString(her['profile_image_url']))
+    return false unless img
+
+    object.setIcon(img)
+    true
+  end
 end
