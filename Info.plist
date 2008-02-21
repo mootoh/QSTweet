@@ -15,25 +15,46 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>DE</string>
+	<string>F7</string>
 	<key>NSPrincipalClass</key>
 	<string>RCLoader</string>
 	<key>QSActions</key>
 	<dict>
-		<key>TwitterPluginAction</key>
+		<key>post</key>
 		<dict>
 			<key>actionClass</key>
 			<string>TwitterPluginAction</string>
 			<key>actionSelector</key>
-			<string>post:</string>
+			<string>post:to:</string>
 			<key>directTypes</key>
 			<array>
-				<string>*</string>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>girl_square</string>
+			<key>indirectOptional</key>
+			<true/>
+			<key>name</key>
+			<string>post (Twitter)</string>
+			<key>validatesObjects</key>
+			<false/>
+		</dict>
+		<key>reply</key>
+		<dict>
+			<key>actionClass</key>
+			<string>TwitterPluginAction</string>
+			<key>actionSelector</key>
+			<string>post:to:</string>
+			<key>directTypes</key>
+			<array>
+				<string>TwitterPluginType</string>
 			</array>
 			<key>icon</key>
 			<string>girl_square</string>
 			<key>name</key>
-			<string>Twitter</string>
+			<string>reply that...</string>
+			<key>reverseArguments</key>
+			<true/>
 			<key>validatesObjects</key>
 			<false/>
 		</dict>
@@ -82,7 +103,7 @@
 		</dict>
 		<key>QSBundleChildHandlers</key>
 		<dict>
-			<key>com.apple.whatever</key>
+			<key>org.deadbeaf.TwitterPlugin</key>
 			<string>TwitterPluginSource</string>
 		</dict>
 		<key>QSObjectHandlers</key>

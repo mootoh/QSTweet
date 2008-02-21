@@ -39,11 +39,16 @@ class TwitterPluginAction < OSX::QSActionProvider
     req
   end
     
-  def post(arg)
+  def post_to(arg, friend)
     str = arg.stringValue.to_s
     if str == '/reload'
       reload
       return arg
+    end
+
+    if friend
+      str = '@' + friend.stringValue.to_s + ' ' + str
+      Shared.logger.info(str)
     end
 
     begin
@@ -56,6 +61,16 @@ class TwitterPluginAction < OSX::QSActionProvider
 
     arg
   end
+
+=begin
+  def validActionsForDirectObject_indirectObject(dobj, iobj)
+    Shared.logger.info('validActionsForDirectObject_indirectObject')
+    if dobj.primaryType.isEqualToString 'TwitterPluginType'
+      return ['reply']
+    end
+    return ['post']
+  end
+=end
 
   #
   # callbacks

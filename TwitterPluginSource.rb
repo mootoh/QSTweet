@@ -9,7 +9,7 @@ class TwitterPluginSource < OSX::QSObjectSource
 
   def initialize
     super
-    @friends = File.exist?(FRIENDS) ?  Marshal.load(open(FRIENDS)) : []
+    @friends = File.exist?(FRIENDS) ? Marshal.load(open(FRIENDS)) : []
   end
 
   def indexIsValidFromDate_forEntry(index, entry)
@@ -50,6 +50,7 @@ class TwitterPluginSource < OSX::QSObjectSource
 
       friends = JSON.parse(open(url).read)
       friends.each do |friend|
+        Shared.logger.info(friend['screen_name'])
         obj = OSX::QSObject.objectWithName(friend['screen_name'])
         obj.setObject_forType('', 'TwitterPluginType')
         obj.setPrimaryType('TwitterPluginType')
@@ -73,6 +74,9 @@ class TwitterPluginSource < OSX::QSObjectSource
 
   def loadIconForObject(object)
     return false unless @friends
+    return false if @friends.empty?
+
+    Shared.logger.info('1')
 
     her = @friends.find {|x| x['screen_name'] == object.name.to_s}
     img = OSX::NSImage.alloc.initWithContentsOfURL(OSX::NSURL.URLWithString(her['profile_image_url']))
