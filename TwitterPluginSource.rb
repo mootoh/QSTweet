@@ -42,22 +42,42 @@ class TwitterPluginSource < OSX::QSObjectSource
     while true
       url = 'http://' + screen_name + ':' + password +
             '@twitter.com/statuses/friends/' + screen_name + '.json'
+      #Shared.logger.info(url)
 
       if count > 1
         url += '?page=' + count.to_s
       end
       count += 1
 
-      friends = JSON.parse(open(url).read)
-      friends.each do |friend|
-        Shared.logger.info(friend['screen_name'])
-        obj = OSX::QSObject.objectWithName(friend['screen_name'])
-        obj.setObject_forType('', 'TwitterPluginType')
-        obj.setPrimaryType('TwitterPluginType')
-        objects.push(obj)
-      end
+      friends = []
+      begin
+        sio = open(url)
+        #Shared.logger.info('1')
+        res = sio.read
+        #Shared.logger.info('2')
+        unless res
+          #Shared.logger.info('2-5')
+          Shared.logger.info('no friends retrieved.')
+          break
+        end
+        #Shared.logger.info('3')
+        #Shared.logger.info(res.class.to_s)
 
-      @friends += friends
+        friends = JSON.parse(res)
+        #Shared.logger.info('4')
+        friends.each do |friend|
+          #Shared.logger.info(friend['screen_name'])
+          obj = OSX::QSObject.objectWithName(friend['screen_name'])
+          obj.setObject_forType('', 'TwitterPluginType')
+          obj.setPrimaryType('TwitterPluginType')
+          objects.push(obj)
+        end
+
+        @friends += friends
+      rescue => e
+        Shared.logger.info('objectsForEntry : exception: ' + e.to_s)
+        []
+      end
 
       break if (friends.size < 100)
     end
@@ -75,8 +95,6 @@ class TwitterPluginSource < OSX::QSObjectSource
   def loadIconForObject(object)
     return false unless @friends
     return false if @friends.empty?
-
-    Shared.logger.info('1')
 
     her = @friends.find {|x| x['screen_name'] == object.name.to_s}
     img = OSX::NSImage.alloc.initWithContentsOfURL(OSX::NSURL.URLWithString(her['profile_image_url']))

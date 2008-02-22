@@ -9,6 +9,8 @@ require 'osx/cocoa'
 require 'shared'
 require 'cgi'
 require 'kconv'
+require 'net/http'
+require 'uri'
 
 # 
 # does actual Action
@@ -28,9 +30,16 @@ class TwitterPluginAction < OSX::QSActionProvider
     screen_name.to_s + ':' + password
   end
 
-  def make_request(content)
+  def name_and_pass
+    dict = OSX::NSUserDefaultsController.sharedUserDefaultsController.values;
+    screen_name = dict.valueForKey("TwitterPreference.screenName")
+    password    = dict.valueForKey("TwitterPreference.password")
+    [screen_name.to_s, password]
+  end
+
+  def make_request_with_cocoa(content)
     u = 'http://' + name_pass + '@twitter.com/statuses/update.json'
-    # Shared.logger.info(u.to_s)
+    Shared.logger.info(u.to_s)
 
     req = OSX::NSMutableURLRequest.alloc.initWithURL(OSX::NSURL.URLWithString(u))
     req.setHTTPMethod('POST')
@@ -38,10 +47,37 @@ class TwitterPluginAction < OSX::QSActionProvider
     req.setHTTPBody(OSX::NSData.dataWithBytes_length(content, content.size))
     req
   end
+
+  def request_with_cocoa(req)
+    con = OSX::NSURLConnection.connectionWithRequest_delegate(req, self)
+    Shared.logger.info(con ? "request succeeded" : "request failed")
+  end
+
+  def make_request(content)
+    req = Net::HTTP::Post.new('/statuses/update.json')
+    np = name_and_pass
+    req.basic_auth np[0], np[1]
+    req.body = Kconv.toutf8(content)
+    req
+  end
+
+  def request(req)
+    http = if ENV['http_proxy']
+      u = URI.parse(ENV['http_proxy'])
+      Net::HTTP::Proxy(u.host, u.port).new('twitter.com')
+    else
+      Net::HTTP.new('twitter.com')
+    end
+
+    res = http.request(req)
+    Shared.logger.info(res.message)
+    res
+  end
     
   def post_to(arg, friend)
     str = arg.stringValue.to_s
     if str == '/reload'
+      Shared.logger.info('reload')
       reload
       return arg
     end
@@ -53,9 +89,9 @@ class TwitterPluginAction < OSX::QSActionProvider
 
     begin
       content = 'source=QSTwitter&status=' + CGI.escape(str)
-      req = make_request(content)
-      con = OSX::NSURLConnection.connectionWithRequest_delegate(req, self)
-      # Shared.logger.info(con ? "request succeeded" : "request failed")
+      Thread.new {
+        request(make_request(content))
+      }
     rescue
     end
 
@@ -73,22 +109,22 @@ class TwitterPluginAction < OSX::QSActionProvider
 =end
 
   #
-  # callbacks
+  # callbacks for Cocoa HTTP request
   #
   def connection_didReceiveResponse(con, res)
-    #Shared.logger.info("connection_didReceiveResponse")
+    Shared.logger.info('connection_didReceiveResponse' + res.statusCode.to_s)
   end
 
   def connection_didReceiveData(con, data)
-    #Shared.logger.info("connection_didReceiveData")
+    Shared.logger.info('connection_didReceiveData' + data.to_s)
     #OSX::QSShowNotifierWithAttributes({'QSTwitter' => OSX::QSNotifierTitle, 'posted' => OSX::QSNotifierText})
   end
 
   def connection_didFailWithErro(con, err)
-    #Shared.logger.info("connection_didFailWithErro")
+    Shared.logger.info('connection_didFailWithErro' + err.to_s)
   end
 
   def connectiondidFinishLoading(con)
-    #Shared.logger.info("connectiondidFinishLoading")
+    Shared.logger.info("connectiondidFinishLoading")
   end
 end # Action
