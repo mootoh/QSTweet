@@ -6,6 +6,7 @@
 #   Motohiro Takayama <mootoh@gmail.com>
 #
 class Shared
+  PUBLIC = 'QSTwitter'
   def Shared.set_logger(logger)
     @@logger = logger
   end

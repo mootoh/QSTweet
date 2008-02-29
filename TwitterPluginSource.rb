@@ -81,6 +81,14 @@ class TwitterPluginSource < OSX::QSObjectSource
 
       break if (friends.size < 100)
     end
+
+    # add public one
+    obj = OSX::QSObject.objectWithName(Shared::PUBLIC)
+    obj.setObject_forType('', 'TwitterPluginType')
+    obj.setPrimaryType('TwitterPluginType')
+    objects.push(obj)
+    @friends.push({'screen_name' => Shared::PUBLIC})
+
     @friends.uniq!
     Marshal.dump(@friends, open(FRIENDS, 'w'))
     objects
@@ -95,6 +103,11 @@ class TwitterPluginSource < OSX::QSObjectSource
   def loadIconForObject(object)
     return false unless @friends
     return false if @friends.empty?
+
+    if object.name.to_s == Shared::PUBLIC
+      object.setIcon(OSX::QSResourceManager.imageNamed('girl_square'))
+      return true
+    end
 
     her = @friends.find {|x| x['screen_name'] == object.name.to_s}
     img = OSX::NSImage.alloc.initWithContentsOfURL(OSX::NSURL.URLWithString(her['profile_image_url']))

@@ -82,7 +82,7 @@ class TwitterPluginAction < OSX::QSActionProvider
       return arg
     end
 
-    if friend
+    if friend && (friend.stringValue.to_s != Shared::PUBLIC)
       str = '@' + friend.stringValue.to_s + ' ' + str
       Shared.logger.info(str)
     end
@@ -107,6 +107,13 @@ class TwitterPluginAction < OSX::QSActionProvider
     return ['post']
   end
 =end
+  def validIndirectObjectsForAction_directObject(action, dobj)
+    Shared.logger.info('validIndirectObjectsForAction_directObject')
+    #[NSArray arrayWithObject:[QSObject textProxyObjectWithDefault    Value:@""]];
+    if dobj.primaryType.isEqualToString 'TwitterPluginType'
+      [OSX::QSObject.textProxyObjectWithDefaultValue('')]
+    end
+  end
 
   #
   # callbacks for Cocoa HTTP request
