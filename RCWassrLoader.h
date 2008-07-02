@@ -1,14 +1,14 @@
 //
 // RCLoader.h - bootstrapper
 //
-//   TwitterPlugin
+//   WassrPlugin
 //   License: revised BSD
 //   Motohiro Takayama <mootoh@gmail.com>
 //
 
 #import <QSCore/QSObject.h>
 
-@interface RCLoader : NSObject
+@interface RCWassrLoader : NSObject
 {
 }
 @end

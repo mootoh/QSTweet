@@ -1,18 +1,18 @@
 //
-//  TwitterPrefPane.m
-//  TwitterPlugin
+//  WassrPrefPane.m
+//  WassrPlugin
 //
 //  Created by Motohiro Takayama on 12/12/07.
 //  Copyright 2007 __MyCompanyName__. All rights reserved.
 //
 
-#import "TwitterPrefPane.h"
+#import "WassrPrefPane.h"
 
 
-@implementation TwitterPrefPane
+@implementation WassrPrefPane
 
 -(NSString *)mainNibName {
-	return @"TwitterPrefPane";
+	return @"WassrPrefPane";
 }
 
 @end

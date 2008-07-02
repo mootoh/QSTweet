@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'TwitterPlugin' target in the 'TwitterPlugin' project
+// Prefix header for all source files of the 'WassrPlugin' target in the 'WassrPlugin' project
 //
 
 #ifdef __OBJC__
@@ -10,4 +10,4 @@
 #endif
 
 
-#define kTwitterPluginType @"TwitterPluginType"
+#define kWassrPluginType @"WassrPluginType"

@@ -1,7 +1,7 @@
 #
 # qs_action.rb - actual Action behavior
 #
-# TwitterPlugin
+# WassrPlugin
 #   License: revised BSD
 #   Motohiro Takayama <mootoh@gmail.com>
 #
@@ -15,7 +15,7 @@ require 'uri'
 # 
 # does actual Action
 #
-class TwitterPluginAction < OSX::QSActionProvider
+class WassrPluginAction < OSX::QSActionProvider
   # reload itself
   def reload
     Shared.logger.info('reloading ' + __FILE__)
@@ -25,20 +25,20 @@ class TwitterPluginAction < OSX::QSActionProvider
   # get screenName:password from PreferencePane
   def name_pass
     dict = OSX::NSUserDefaultsController.sharedUserDefaultsController.values;
-    screen_name = dict.valueForKey("TwitterPreference.screenName")
-    password    = dict.valueForKey("TwitterPreference.password")
+    screen_name = dict.valueForKey("WassrPreference.screenName")
+    password    = dict.valueForKey("WassrPreference.password")
     screen_name.to_s + ':' + password
   end
 
   def name_and_pass
     dict = OSX::NSUserDefaultsController.sharedUserDefaultsController.values;
-    screen_name = dict.valueForKey("TwitterPreference.screenName")
-    password    = dict.valueForKey("TwitterPreference.password")
+    screen_name = dict.valueForKey("WassrPreference.screenName")
+    password    = dict.valueForKey("WassrPreference.password")
     [screen_name.to_s, password]
   end
 
   def make_request_with_cocoa(content)
-    u = 'http://' + name_pass + '@twitter.com/statuses/update.json'
+    u = 'http://' + name_pass + '@api.wassr.jp/statuses/update.json'
     Shared.logger.info(u.to_s)
 
     req = OSX::NSMutableURLRequest.alloc.initWithURL(OSX::NSURL.URLWithString(u))
@@ -57,6 +57,7 @@ class TwitterPluginAction < OSX::QSActionProvider
     req = Net::HTTP::Post.new('/statuses/update.json')
     np = name_and_pass
     req.basic_auth np[0], np[1]
+	Shared.logger.info("name=#{np[0]}, pass=#{np[1]}")
     req.body = Kconv.toutf8(content)
     req
   end
@@ -64,9 +65,9 @@ class TwitterPluginAction < OSX::QSActionProvider
   def request(req)
     http = if ENV['http_proxy']
       u = URI.parse(ENV['http_proxy'])
-      Net::HTTP::Proxy(u.host, u.port).new('twitter.com')
+      Net::HTTP::Proxy(u.host, u.port).new('api.wassr.jp')
     else
-      Net::HTTP.new('twitter.com')
+      Net::HTTP.new('api.wassr.jp')
     end
 
     res = http.request(req)
@@ -88,7 +89,7 @@ class TwitterPluginAction < OSX::QSActionProvider
     end
 
     begin
-      content = 'source=QSTwitter&status=' + CGI.escape(str)
+      content = 'source=QSWassr&status=' + CGI.escape(str)
       Thread.new {
         request(make_request(content))
       }
@@ -101,7 +102,7 @@ class TwitterPluginAction < OSX::QSActionProvider
 =begin
   def validActionsForDirectObject_indirectObject(dobj, iobj)
     Shared.logger.info('validActionsForDirectObject_indirectObject')
-    if dobj.primaryType.isEqualToString 'TwitterPluginType'
+    if dobj.primaryType.isEqualToString 'WassrPluginType'
       return ['reply']
     end
     return ['post']
@@ -110,7 +111,7 @@ class TwitterPluginAction < OSX::QSActionProvider
   def validIndirectObjectsForAction_directObject(action, dobj)
     Shared.logger.info('validIndirectObjectsForAction_directObject')
     #[NSArray arrayWithObject:[QSObject textProxyObjectWithDefault    Value:@""]];
-    if dobj.primaryType.isEqualToString 'TwitterPluginType'
+    if dobj.primaryType.isEqualToString 'WassrPluginType'
       [OSX::QSObject.textProxyObjectWithDefaultValue('')]
     end
   end
@@ -124,7 +125,7 @@ class TwitterPluginAction < OSX::QSActionProvider
 
   def connection_didReceiveData(con, data)
     Shared.logger.info('connection_didReceiveData' + data.to_s)
-    #OSX::QSShowNotifierWithAttributes({'QSTwitter' => OSX::QSNotifierTitle, 'posted' => OSX::QSNotifierText})
+    #OSX::QSShowNotifierWithAttributes({'QSWassr' => OSX::QSNotifierTitle, 'posted' => OSX::QSNotifierText})
   end
 
   def connection_didFailWithErro(con, err)

@@ -3,7 +3,7 @@ require 'open-uri'
 require 'rubygems'
 require 'json'
 
-class TwitterPluginSource < OSX::QSObjectSource
+class WassrPluginSource < OSX::QSObjectSource
   @@count = 0
   FRIENDS = File.dirname(__FILE__) + '/friends.dat'
 
@@ -17,7 +17,7 @@ class TwitterPluginSource < OSX::QSObjectSource
   end
 
   def iconForEntry(dict) # dict.keys => name, source, ID, bundle
-    OSX::QSResourceManager.imageNamed('girl_square')
+    OSX::QSResourceManager.imageNamed('wassr_logo')
   end
 
 =begin
@@ -32,8 +32,8 @@ class TwitterPluginSource < OSX::QSObjectSource
 
   def objectsForEntry(entry)
     dict = OSX::NSUserDefaultsController.sharedUserDefaultsController.values;
-    screen_name = dict.valueForKey("TwitterPreference.screenName")
-    password    = dict.valueForKey("TwitterPreference.password")
+    screen_name = dict.valueForKey("WassrPreference.screenName")
+    password    = dict.valueForKey("WassrPreference.password")
 
     @friends = []
     objects = []
@@ -41,7 +41,7 @@ class TwitterPluginSource < OSX::QSObjectSource
 
     while true
       url = 'http://' + screen_name + ':' + password +
-            '@twitter.com/statuses/friends/' + screen_name + '.json'
+            '@api.wassr.jp/statuses/friends/' + screen_name + '.json'
       #Shared.logger.info(url)
 
       if count > 1
@@ -68,8 +68,8 @@ class TwitterPluginSource < OSX::QSObjectSource
         friends.each do |friend|
           #Shared.logger.info(friend['screen_name'])
           obj = OSX::QSObject.objectWithName(friend['screen_name'])
-          obj.setObject_forType('', 'TwitterPluginType')
-          obj.setPrimaryType('TwitterPluginType')
+          obj.setObject_forType('', 'WassrPluginType')
+          obj.setPrimaryType('WassrPluginType')
           objects.push(obj)
         end
 
@@ -84,8 +84,8 @@ class TwitterPluginSource < OSX::QSObjectSource
 
     # add public one
     obj = OSX::QSObject.objectWithName(Shared::PUBLIC)
-    obj.setObject_forType('', 'TwitterPluginType')
-    obj.setPrimaryType('TwitterPluginType')
+    obj.setObject_forType('', 'WassrPluginType')
+    obj.setPrimaryType('WassrPluginType')
     objects.push(obj)
     @friends.push({'screen_name' => Shared::PUBLIC})
 
@@ -105,7 +105,7 @@ class TwitterPluginSource < OSX::QSObjectSource
     return false if @friends.empty?
 
     if object.name.to_s == Shared::PUBLIC
-      object.setIcon(OSX::QSResourceManager.imageNamed('girl_square'))
+      object.setIcon(OSX::QSResourceManager.imageNamed('wassr_logo'))
       return true
     end
 

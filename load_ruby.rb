@@ -1,7 +1,7 @@
 #
 # load_ruby.rb - load all Ruby stuff
 #
-# TwitterPlugin
+# WassrPlugin
 #   License: revised BSD
 #   Motohiro Takayama <mootoh@gmail.com>
 #

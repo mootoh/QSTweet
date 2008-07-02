@@ -1,12 +1,12 @@
 #
 # shared.rb - shared Logger Factory
 #
-# TwitterPlugin
+# WassrPlugin
 #   License: revised BSD
 #   Motohiro Takayama <mootoh@gmail.com>
 #
 class Shared
-  PUBLIC = 'QSTwitter'
+  PUBLIC = 'QSWassr'
   def Shared.set_logger(logger)
     @@logger = logger
   end

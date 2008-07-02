@@ -12,19 +12,19 @@
 		861673750D6AB3A300767E2A /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8616735B0D6AB31000767E2A /* RubyCocoa.framework */; };
 		861673860D6AB5C500767E2A /* load_ruby.rb in Resources */ = {isa = PBXBuildFile; fileRef = 861673810D6AB5C500767E2A /* load_ruby.rb */; };
 		861673870D6AB5C500767E2A /* qs_action.rb in Resources */ = {isa = PBXBuildFile; fileRef = 861673820D6AB5C500767E2A /* qs_action.rb */; };
-		861673880D6AB5C500767E2A /* RCLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 861673840D6AB5C500767E2A /* RCLoader.m */; };
+		861673880D6AB5C500767E2A /* RCWassrLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 861673840D6AB5C500767E2A /* RCWassrLoader.m */; };
 		861673890D6AB5C500767E2A /* shared.rb in Resources */ = {isa = PBXBuildFile; fileRef = 861673850D6AB5C500767E2A /* shared.rb */; };
-		8618D1180D465B01003A880D /* girl_square.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8618D1170D465B01003A880D /* girl_square.icns */; };
 		866641FF0D6B0A0500BD4B98 /* QSEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFA8E9C0816CCCA00A858CD /* QSEffects.framework */; };
-		86735EC40D6C7E6D008FCDC9 /* TwitterPluginSource.rb in Resources */ = {isa = PBXBuildFile; fileRef = 86735EC30D6C7E6D008FCDC9 /* TwitterPluginSource.rb */; };
-		869C3FC60D0EF761005B7175 /* TwitterPrefPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 869C3FC50D0EF761005B7175 /* TwitterPrefPane.nib */; };
-		869C3FCA0D0EF7C4005B7175 /* TwitterPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C3FC90D0EF7C4005B7175 /* TwitterPrefPane.m */; };
+		86735EC40D6C7E6D008FCDC9 /* WassrPluginSource.rb in Resources */ = {isa = PBXBuildFile; fileRef = 86735EC30D6C7E6D008FCDC9 /* WassrPluginSource.rb */; };
+		869C3FC60D0EF761005B7175 /* WassrPrefPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 869C3FC50D0EF761005B7175 /* WassrPrefPane.nib */; };
+		869C3FCA0D0EF7C4005B7175 /* WassrPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C3FC90D0EF7C4005B7175 /* WassrPrefPane.m */; };
 		869C3FD30D0EF837005B7175 /* QSInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFA8E9D0816CCCA00A858CD /* QSInterface.framework */; };
+		86FE104D0E1BDBBE0094DDBB /* wassr_logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = 86FE104C0E1BDBBE0094DDBB /* wassr_logo.icns */; };
 		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32DBCF980370C29C00C91783 /* TwitterPlugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPlugin_Prefix.pch; sourceTree = "<group>"; };
+		32DBCF980370C29C00C91783 /* WassrPlugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WassrPlugin_Prefix.pch; sourceTree = "<group>"; };
 		7F35FF3C07F9ACD90056051D /* QSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSCore.framework; sourceTree = QSFrameworks; };
 		7F35FF3D07F9ACD90056051D /* QSEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSEffects.framework; sourceTree = QSFrameworks; };
 		7F35FF3E07F9ACD90056051D /* QSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSFoundation.framework; sourceTree = QSFrameworks; };
@@ -34,21 +34,17 @@
 		8616735B0D6AB31000767E2A /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /System/Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
 		861673810D6AB5C500767E2A /* load_ruby.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = load_ruby.rb; sourceTree = "<group>"; };
 		861673820D6AB5C500767E2A /* qs_action.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = qs_action.rb; sourceTree = "<group>"; };
-		861673830D6AB5C500767E2A /* RCLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLoader.h; sourceTree = "<group>"; };
-		861673840D6AB5C500767E2A /* RCLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLoader.m; sourceTree = "<group>"; };
+		861673830D6AB5C500767E2A /* RCWassrLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCWassrLoader.h; sourceTree = "<group>"; };
+		861673840D6AB5C500767E2A /* RCWassrLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCWassrLoader.m; sourceTree = "<group>"; };
 		861673850D6AB5C500767E2A /* shared.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = shared.rb; sourceTree = "<group>"; };
-		8618D1170D465B01003A880D /* girl_square.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = girl_square.icns; sourceTree = "<group>"; };
-		86735EC30D6C7E6D008FCDC9 /* TwitterPluginSource.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TwitterPluginSource.rb; sourceTree = "<group>"; };
-		869C3FC50D0EF761005B7175 /* TwitterPrefPane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterPrefPane.nib; sourceTree = "<group>"; };
-		869C3FC80D0EF7C4005B7175 /* TwitterPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPrefPane.h; sourceTree = "<group>"; };
-		869C3FC90D0EF7C4005B7175 /* TwitterPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterPrefPane.m; sourceTree = "<group>"; };
+		86735EC30D6C7E6D008FCDC9 /* WassrPluginSource.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = WassrPluginSource.rb; sourceTree = "<group>"; };
+		869C3FC50D0EF761005B7175 /* WassrPrefPane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = WassrPrefPane.nib; sourceTree = "<group>"; };
+		869C3FC80D0EF7C4005B7175 /* WassrPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WassrPrefPane.h; sourceTree = "<group>"; };
+		869C3FC90D0EF7C4005B7175 /* WassrPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WassrPrefPane.m; sourceTree = "<group>"; };
+		86FE104C0E1BDBBE0094DDBB /* wassr_logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = wassr_logo.icns; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8D1AC9740486D14A00FE50C9 /* TwitterPlugin.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterPlugin.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBF5817A0B1D9D84003CFF55 /* TwitterPluginAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPluginAction.h; sourceTree = "<group>"; };
-		BBF5817B0B1D9D84003CFF55 /* TwitterPluginAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterPluginAction.m; sourceTree = "<group>"; };
+		8D1AC9740486D14A00FE50C9 /* WassrPlugin.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WassrPlugin.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD92D38A0106425D02CA0E72 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		E1EAB045068128A200774DFF /* TwitterPlugin.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = TwitterPlugin.m; sourceTree = "<group>"; };
-		E1EAB047068128A800774DFF /* TwitterPlugin.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TwitterPlugin.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +79,7 @@
 		0259C582FE90428111CA0C5A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8618D1170D465B01003A880D /* girl_square.icns */,
+				86FE104C0E1BDBBE0094DDBB /* wassr_logo.icns */,
 				8D1AC9730486D14A00FE50C9 /* Info.plist */,
 			);
 			name = Resources;
@@ -92,8 +88,8 @@
 		1ED78706FE9D4A0611CA0C5A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				869C3FC50D0EF761005B7175 /* TwitterPrefPane.nib */,
-				8D1AC9740486D14A00FE50C9 /* TwitterPlugin.qsplugin */,
+				869C3FC50D0EF761005B7175 /* WassrPrefPane.nib */,
+				8D1AC9740486D14A00FE50C9 /* WassrPlugin.qsplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,18 +111,14 @@
 		32DBCF9E0370C38000C91783 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				86735EC30D6C7E6D008FCDC9 /* TwitterPluginSource.rb */,
+				86735EC30D6C7E6D008FCDC9 /* WassrPluginSource.rb */,
 				861673810D6AB5C500767E2A /* load_ruby.rb */,
 				861673820D6AB5C500767E2A /* qs_action.rb */,
-				861673830D6AB5C500767E2A /* RCLoader.h */,
-				861673840D6AB5C500767E2A /* RCLoader.m */,
+				861673830D6AB5C500767E2A /* RCWassrLoader.h */,
+				861673840D6AB5C500767E2A /* RCWassrLoader.m */,
 				861673850D6AB5C500767E2A /* shared.rb */,
-				BBF5817A0B1D9D84003CFF55 /* TwitterPluginAction.h */,
-				BBF5817B0B1D9D84003CFF55 /* TwitterPluginAction.m */,
-				E1EAB047068128A800774DFF /* TwitterPlugin.h */,
-				E1EAB045068128A200774DFF /* TwitterPlugin.m */,
-				869C3FC80D0EF7C4005B7175 /* TwitterPrefPane.h */,
-				869C3FC90D0EF7C4005B7175 /* TwitterPrefPane.m */,
+				869C3FC80D0EF7C4005B7175 /* WassrPrefPane.h */,
+				869C3FC90D0EF7C4005B7175 /* WassrPrefPane.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -134,7 +126,7 @@
 		32DBCF9F0370C38200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32DBCF980370C29C00C91783 /* TwitterPlugin_Prefix.pch */,
+				32DBCF980370C29C00C91783 /* WassrPlugin_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -151,9 +143,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1AC9600486D14A00FE50C9 /* TwitterPlugin */ = {
+		8D1AC9600486D14A00FE50C9 /* WassrPlugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "TwitterPlugin" */;
+			buildConfigurationList = 7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "WassrPlugin" */;
 			buildPhases = (
 				8D1AC9660486D14A00FE50C9 /* Resources */,
 				8D1AC96A0486D14A00FE50C9 /* Sources */,
@@ -164,10 +156,10 @@
 			);
 			dependencies = (
 			);
-			name = TwitterPlugin;
+			name = WassrPlugin;
 			productInstallPath = "$(HOME)/Developer/Palettes";
 			productName = TwitterPlugin;
-			productReference = 8D1AC9740486D14A00FE50C9 /* TwitterPlugin.qsplugin */;
+			productReference = 8D1AC9740486D14A00FE50C9 /* WassrPlugin.qsplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -175,14 +167,14 @@
 /* Begin PBXProject section */
 		0259C573FE90428111CA0C5A /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "TwitterPlugin" */;
+			buildConfigurationList = 7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "WassrPlugin" */;
 			compatibilityVersion = "Xcode 3.0";
 			hasScannedForEncodings = 1;
 			mainGroup = 0259C574FE90428111CA0C5A /* TwitterPlugin */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1AC9600486D14A00FE50C9 /* TwitterPlugin */,
+				8D1AC9600486D14A00FE50C9 /* WassrPlugin */,
 			);
 		};
 /* End PBXProject section */
@@ -192,12 +184,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				869C3FC60D0EF761005B7175 /* TwitterPrefPane.nib in Resources */,
-				8618D1180D465B01003A880D /* girl_square.icns in Resources */,
+				869C3FC60D0EF761005B7175 /* WassrPrefPane.nib in Resources */,
 				861673860D6AB5C500767E2A /* load_ruby.rb in Resources */,
 				861673870D6AB5C500767E2A /* qs_action.rb in Resources */,
 				861673890D6AB5C500767E2A /* shared.rb in Resources */,
-				86735EC40D6C7E6D008FCDC9 /* TwitterPluginSource.rb in Resources */,
+				86735EC40D6C7E6D008FCDC9 /* WassrPluginSource.rb in Resources */,
+				86FE104D0E1BDBBE0094DDBB /* wassr_logo.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				869C3FCA0D0EF7C4005B7175 /* TwitterPrefPane.m in Sources */,
-				861673880D6AB5C500767E2A /* RCLoader.m in Sources */,
+				869C3FCA0D0EF7C4005B7175 /* WassrPrefPane.m in Sources */,
+				861673880D6AB5C500767E2A /* RCWassrLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,10 +234,10 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = TwitterPlugin_Prefix.pch;
+				GCC_PREFIX_HEADER = WassrPlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				OTHER_LDFLAGS = "-bundle";
-				PRODUCT_NAME = TwitterPlugin;
+				PRODUCT_NAME = WassrPlugin;
 				WRAPPER_EXTENSION = qsplugin;
 				ZERO_LINK = YES;
 			};
@@ -292,7 +284,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "TwitterPlugin" */ = {
+		7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "WassrPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F6B3EEC085CE8DF000735A8 /* Development */,
@@ -301,7 +293,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "TwitterPlugin" */ = {
+		7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "WassrPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F6B3EF0085CE8DF000735A8 /* Development */,

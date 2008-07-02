@@ -5,25 +5,25 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>TwitterPlugin</string>
+	<string>WassrPlugin</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.deadbeaf.TwitterPlugin</string>
+	<string>org.deadbeaf.WassrPlugin</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>TwitterPlugin</string>
+	<string>WassrPlugin</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>12A</string>
+	<string>137</string>
 	<key>NSPrincipalClass</key>
-	<string>RCLoader</string>
+	<string>RCWassrLoader</string>
 	<key>QSActions</key>
 	<dict>
 		<key>post</key>
 		<dict>
 			<key>actionClass</key>
-			<string>TwitterPluginAction</string>
+			<string>WassrPluginAction</string>
 			<key>actionSelector</key>
 			<string>post:to:</string>
 			<key>directTypes</key>
@@ -31,26 +31,26 @@
 				<string>NSStringPboardType</string>
 			</array>
 			<key>icon</key>
-			<string>girl_square</string>
+			<string>wassr_logo</string>
 			<key>indirectOptional</key>
 			<true/>
 			<key>name</key>
-			<string>post (Twitter)</string>
+			<string>post (Wassr)</string>
 			<key>validatesObjects</key>
 			<false/>
 		</dict>
 		<key>reply</key>
 		<dict>
 			<key>actionClass</key>
-			<string>TwitterPluginAction</string>
+			<string>WassrPluginAction</string>
 			<key>actionSelector</key>
 			<string>post:to:</string>
 			<key>directTypes</key>
 			<array>
-				<string>TwitterPluginType</string>
+				<string>WassrPluginType</string>
 			</array>
 			<key>icon</key>
-			<string>girl_square</string>
+			<string>wassr_logo</string>
 			<key>name</key>
 			<string>reply that...</string>
 			<key>reverseArguments</key>
@@ -61,10 +61,10 @@
 	</dict>
 	<key>QSDefaults</key>
 	<dict>
-		<key>TwitterPreference.password</key>
+		<key>WassrPreference.password</key>
 		<string>pass</string>
-		<key>TwitterPreference.screenName</key>
-		<string>twitter</string>
+		<key>WassrPreference.screenName</key>
+		<string>wassr</string>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
@@ -75,9 +75,9 @@
 			<string>Web</string>
 		</array>
 		<key>description</key>
-		<string>send message quickly to Twitter.</string>
+		<string>send message quickly to Wassr.</string>
 		<key>icon</key>
-		<string>girl_square</string>
+		<string>wassr_logo</string>
 		<key>qsversion</key>
 		<string>29CC</string>
 		<key>relatedBundles </key>
@@ -87,47 +87,47 @@
 	<array>
 		<dict>
 			<key>ID</key>
-			<string>QSPresetTwitterPlugin</string>
+			<string>QSPresetWassrPlugin</string>
 			<key>name</key>
-			<string>Twitter following</string>
+			<string>Wassr following</string>
 			<key>source</key>
-			<string>TwitterPluginSource</string>
+			<string>WassrPluginSource</string>
 		</dict>
 	</array>
 	<key>QSRegistration</key>
 	<dict>
 		<key>QSActionProviders</key>
 		<dict>
-			<key>TwitterPluginAction</key>
-			<string>TwitterPluginAction</string>
+			<key>WassrPluginAction</key>
+			<string>WassrPluginAction</string>
 		</dict>
 		<key>QSBundleChildHandlers</key>
 		<dict>
-			<key>org.deadbeaf.TwitterPlugin</key>
-			<string>TwitterPluginSource</string>
+			<key>org.deadbeaf.wassrPlugin</key>
+			<string>WassrPluginSource</string>
 		</dict>
 		<key>QSObjectHandlers</key>
 		<dict>
-			<key>TwitterPluginType</key>
-			<string>TwitterPluginSource</string>
+			<key>WassrPluginType</key>
+			<string>WassrPluginSource</string>
 		</dict>
 		<key>QSObjectSources</key>
 		<dict>
-			<key>TwitterPluginSource</key>
-			<string>TwitterPluginSource</string>
+			<key>WassrPluginSource</key>
+			<string>WassrPluginSource</string>
 		</dict>
 		<key>QSPreferencePanes</key>
 		<dict>
-			<key>TwitterPluginPrefPane</key>
+			<key>WassrPluginPrefPane</key>
 			<dict>
 				<key>class</key>
-				<string>TwitterPrefPane</string>
+				<string>WassrPrefPane</string>
 				<key>description</key>
-				<string>Twitter Preferences</string>
+				<string>Wassr Preferences</string>
 				<key>icon</key>
-				<string>girl_square</string>
+				<string>wassr_logo</string>
 				<key>name</key>
-				<string>Twitter option</string>
+				<string>Wassr option</string>
 			</dict>
 		</dict>
 	</dict>
@@ -166,12 +166,12 @@
 	</dict>
 	<key>QSResourceAdditions</key>
 	<dict>
-		<key>girl_square</key>
+		<key>wassr_logo</key>
 		<dict>
 			<key>bundle</key>
-			<string>org.deadbeaf.TwitterPlugin</string>
+			<string>org.deadbeaf.WassrPlugin</string>
 			<key>resource</key>
-			<string>girl_square.icns</string>
+			<string>wassr_logo.icns</string>
 		</dict>
 	</dict>
 </dict>

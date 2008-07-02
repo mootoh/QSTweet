@@ -1,27 +1,27 @@
 //
 //  RCLoader.m - bootstrapper
 //
-//   TwitterPlugin
+//   WassrPlugin
 //   License: revised BSD
 //   Motohiro Takayama <mootoh@gmail.com>
 //
 
-#import "RCLoader.h"
+#import "RCWassrLoader.h"
 #import <RubyCocoa/RubyCocoa.h>
 
-@implementation RCLoader
+@implementation RCWassrLoader
 
 + (void)load {
   static BOOL installed = NO;
 
-  NSLog(@"RCLoader#load ...");
+  NSLog(@"WassrPlugin: RCWassrLoader#load ...");
   if (! installed) {
     if (RBBundleInit("load_ruby.rb", [self class], self)) {
-      NSLog(@"RCLoader#load => failed.");
+      NSLog(@"WassrPlugin: RCWassrLoader#load => failed.");
     }
     else {
       installed = YES;
-      NSLog(@"RCLoader#load => loaded.");
+      NSLog(@"WassrPlugin: RCWassrLoader#load => loaded.");
     }
   }
 }
