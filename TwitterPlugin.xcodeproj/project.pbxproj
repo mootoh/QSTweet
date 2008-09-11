@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 44;
+	objectVersion = 45;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,7 +37,7 @@
 		861673830D6AB5C500767E2A /* RCLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLoader.h; sourceTree = "<group>"; };
 		861673840D6AB5C500767E2A /* RCLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLoader.m; sourceTree = "<group>"; };
 		861673850D6AB5C500767E2A /* shared.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = shared.rb; sourceTree = "<group>"; };
-		8618D1170D465B01003A880D /* girl_square.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = girl_square.icns; sourceTree = "<group>"; };
+		8618D1170D465B01003A880D /* girl_square.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = girl_square.icns; path = resource/girl_square.icns; sourceTree = "<group>"; };
 		86735EC30D6C7E6D008FCDC9 /* TwitterPluginSource.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TwitterPluginSource.rb; sourceTree = "<group>"; };
 		869C3FC50D0EF761005B7175 /* TwitterPrefPane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterPrefPane.nib; sourceTree = "<group>"; };
 		869C3FC80D0EF7C4005B7175 /* TwitterPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPrefPane.h; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		0259C573FE90428111CA0C5A /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "TwitterPlugin" */;
-			compatibilityVersion = "Xcode 3.0";
+			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			mainGroup = 0259C574FE90428111CA0C5A /* TwitterPlugin */;
 			projectDirPath = "";
@@ -274,7 +274,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx10.5;
 			};
 			name = Development;
 		};
@@ -287,7 +287,7 @@
 				);
 				GCC_MODEL_TUNING = G5;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};

@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>133</string>
+	<string>134</string>
 	<key>NSPrincipalClass</key>
 	<string>RCLoader</string>
 	<key>QSActions</key>
