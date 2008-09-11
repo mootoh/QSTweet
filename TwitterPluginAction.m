@@ -10,22 +10,18 @@
 
 @implementation TwitterPluginAction
 
-- (QSObject *)post:(QSObject *)dObject to:(QSObject *)ind
+- (QSObject *) post:(QSObject *)dObject to:(QSObject *)ind
 {
-  QSObject *result = dObject;
-
   // construct request body
   NSString *content = [NSString stringWithFormat:@"source=QSTwitter&status=%@",
     [dObject stringValue]];
   content = [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   content = [content stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
 
-
   // get screenName/password from PreferencePane
   id values = [[NSUserDefaultsController sharedUserDefaultsController] values];
   NSString *screenName = [values valueForKey:@"TwitterPreference.screenName"];
   NSString *password   = [values valueForKey:@"TwitterPreference.password"];
-  //NSLog(@"screenName:%@, password:%@", screenName, password);
 
   // construct request
   NSString *urlString = [NSString stringWithFormat:
@@ -44,7 +40,15 @@
     //NSLog(@"not connected correctly.");
   }
 
-  return result;
+  return dObject;
+}
+
+- (NSArray *) validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)dobj
+{
+	NSLog(@"validIndirectObjectsForAction");
+  return [action isEqualToString:@"TwitterPluginType"] ?
+      [NSArray arrayWithObject:[QSObject textProxyObjectWithDefaultValue:@""]]
+    : nil;
 }
 
 // callbacks

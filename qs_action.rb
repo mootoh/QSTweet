@@ -98,15 +98,6 @@ class TwitterPluginAction < OSX::QSActionProvider
     arg
   end
 
-=begin
-  def validActionsForDirectObject_indirectObject(dobj, iobj)
-    Shared.logger.info('validActionsForDirectObject_indirectObject')
-    if dobj.primaryType.isEqualToString 'TwitterPluginType'
-      return ['reply']
-    end
-    return ['post']
-  end
-=end
   def validIndirectObjectsForAction_directObject(action, dobj)
     Shared.logger.info('validIndirectObjectsForAction_directObject')
     #[NSArray arrayWithObject:[QSObject textProxyObjectWithDefault    Value:@""]];

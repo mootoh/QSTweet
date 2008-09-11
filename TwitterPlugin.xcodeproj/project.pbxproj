@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		7F35FF4007F9ACD90056051D /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3C07F9ACD90056051D /* QSCore.framework */; };
 		7F35FF4207F9ACD90056051D /* QSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3E07F9ACD90056051D /* QSFoundation.framework */; };
-		861673750D6AB3A300767E2A /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8616735B0D6AB31000767E2A /* RubyCocoa.framework */; };
 		8618D1180D465B01003A880D /* girl_square.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8618D1170D465B01003A880D /* girl_square.icns */; };
 		8652FE830E796F150032DF52 /* TwitterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EAB045068128A200774DFF /* TwitterPlugin.m */; };
 		8652FE990E7975570032DF52 /* TwitterPluginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF5817B0B1D9D84003CFF55 /* TwitterPluginAction.m */; };
+		8652FEBD0E79E0F70032DF52 /* TwitterPluginSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8652FEBC0E79E0F70032DF52 /* TwitterPluginSource.m */; };
 		866641FF0D6B0A0500BD4B98 /* QSEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFA8E9C0816CCCA00A858CD /* QSEffects.framework */; };
 		869C3FC60D0EF761005B7175 /* TwitterPrefPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 869C3FC50D0EF761005B7175 /* TwitterPrefPane.nib */; };
 		869C3FCA0D0EF7C4005B7175 /* TwitterPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C3FC90D0EF7C4005B7175 /* TwitterPrefPane.m */; };
@@ -31,6 +31,8 @@
 		8616735B0D6AB31000767E2A /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /System/Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
 		861673820D6AB5C500767E2A /* qs_action.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = qs_action.rb; sourceTree = "<group>"; };
 		8618D1170D465B01003A880D /* girl_square.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = girl_square.icns; path = resource/girl_square.icns; sourceTree = "<group>"; };
+		8652FEBB0E79E0F70032DF52 /* TwitterPluginSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPluginSource.h; sourceTree = "<group>"; };
+		8652FEBC0E79E0F70032DF52 /* TwitterPluginSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterPluginSource.m; sourceTree = "<group>"; };
 		86735EC30D6C7E6D008FCDC9 /* TwitterPluginSource.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TwitterPluginSource.rb; sourceTree = "<group>"; };
 		869C3FC50D0EF761005B7175 /* TwitterPrefPane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterPrefPane.nib; sourceTree = "<group>"; };
 		869C3FC80D0EF7C4005B7175 /* TwitterPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPrefPane.h; sourceTree = "<group>"; };
@@ -53,7 +55,6 @@
 				7F35FF4007F9ACD90056051D /* QSCore.framework in Frameworks */,
 				7F35FF4207F9ACD90056051D /* QSFoundation.framework in Frameworks */,
 				869C3FD30D0EF837005B7175 /* QSInterface.framework in Frameworks */,
-				861673750D6AB3A300767E2A /* RubyCocoa.framework in Frameworks */,
 				866641FF0D6B0A0500BD4B98 /* QSEffects.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +109,8 @@
 		32DBCF9E0370C38000C91783 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8652FEBB0E79E0F70032DF52 /* TwitterPluginSource.h */,
+				8652FEBC0E79E0F70032DF52 /* TwitterPluginSource.m */,
 				86735EC30D6C7E6D008FCDC9 /* TwitterPluginSource.rb */,
 				861673820D6AB5C500767E2A /* qs_action.rb */,
 				BBF5817A0B1D9D84003CFF55 /* TwitterPluginAction.h */,
@@ -212,6 +215,7 @@
 				869C3FCA0D0EF7C4005B7175 /* TwitterPrefPane.m in Sources */,
 				8652FE830E796F150032DF52 /* TwitterPlugin.m in Sources */,
 				8652FE990E7975570032DF52 /* TwitterPluginAction.m in Sources */,
+				8652FEBD0E79E0F70032DF52 /* TwitterPluginSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
