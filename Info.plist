@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>146</string>
+	<string>163</string>
 	<key>NSPrincipalClass</key>
 	<string>TwitterPlugin</string>
 	<key>QSActions</key>
