@@ -40,16 +40,8 @@ static int count = 0;
     NSURL *friends_url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?page=%d", base, i]];
     NSError *err = nil;
 
-    /*
-    NSURLRequest *req = [NSURLRequest requestWithURL:friends_url];
-    NSURLResponse *res = nil;
-    NSData *retrieved = [NSURLConnection sendSynchronousRequest:req
-      returningResponse:&res error:&err];
-    */
-
-    NSLog(@"doc retrieving");
-    NSXMLDocument *doc = [[[NSXMLDocument alloc] initWithContentsOfURL:friends_url options:NSXMLDocumentTidyXML error:&err] autorelease];
-    NSLog(@"doc retrieved");
+    NSXMLDocument *doc = [[[NSXMLDocument alloc] initWithContentsOfURL:friends_url
+      options:NSXMLDocumentTidyXML error:&err] autorelease];
     if (err) {
       NSLog(@"XML cannot be retrieved and parsed correctly.");
       abort();
@@ -59,6 +51,20 @@ static int count = 0;
     if (err) {
       NSLog(@"XPath failed.");
       abort();
+    }
+
+    NSXMLElement *user;
+    for (user in users) {
+      NSArray *nodes = [user nodesForXPath:@"/user/name" error:&err];
+      if (err) {
+        NSLog(@"XPath failed.");
+        abort();
+      }
+
+      NSString *name = [[nodes objectAtIndex:0] stringValue];
+      NSLog(@"name = %@", name);
+
+      //QSObject *obj = [QSObject objectWithName:name];
     }
   }
 
