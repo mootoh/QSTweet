@@ -28,7 +28,7 @@ static int count = 0;
   NSDictionary *dict = [[NSUserDefaultsController sharedUserDefaultsController] values];
   NSString *screen_name = [dict valueForKey:@"TwitterPreference.screenName"];
 
-  NSMutableArray *objects;
+  NSMutableArray *objects = [NSMutableArray array];
 
   NSString *base = [NSString stringWithFormat:@"http://twitter.com/statuses/friends/%@.xml",
            screen_name];
@@ -71,10 +71,11 @@ static int count = 0;
       }
       [obj setObject:@"" forType:@"TwitterPluginType"];
       [obj setPrimaryType:@"TwitterPluginType"];
-      [objects addObject:[obj retain]];
+      [objects addObject:obj];
     }
   }
 
+  NSLog(@"objects count = %d", [objects count]);
 	return objects;
 }
 
