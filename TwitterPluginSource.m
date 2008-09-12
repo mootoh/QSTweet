@@ -55,20 +55,27 @@ static int count = 0;
 
     NSXMLElement *user;
     for (user in users) {
-      NSArray *nodes = [user nodesForXPath:@"/user/name" error:&err];
-      if (err) {
-        NSLog(@"XPath failed.");
-        abort();
+      NSXMLElement *child;
+      QSObject *obj;
+      int count = 0;
+      for (child in [user children]) {
+        if (count == 2) break;
+        if ([[child name] isEqualToString:@"screen_name"]) {
+          NSLog(@"name = %@", [child stringValue]);
+          obj = [QSObject objectWithName:[child stringValue]];
+          count++;
+        } else if ([[child name] isEqualToString:@"profile_image_url"]) {
+          NSLog(@"img url = %@", [child stringValue]);
+          count++;
+        }
       }
-
-      NSString *name = [[nodes objectAtIndex:0] stringValue];
-      NSLog(@"name = %@", name);
-
-      //QSObject *obj = [QSObject objectWithName:name];
+      [obj setObject:@"" forType:@"TwitterPluginType"];
+      [obj setPrimaryType:@"TwitterPluginType"];
+      [objects addObject:[obj retain]];
     }
   }
 
-	return nil;
+	return objects;
 }
 
 @end
