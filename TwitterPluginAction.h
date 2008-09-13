@@ -2,10 +2,9 @@
 //  TwitterPluginAction.h
 //  TwitterPlugin
 //
-//  Created by Motohiro Takayama on 12/12/07.
-//  Copyright __MyCompanyName__ 2007. All rights reserved.
+//  Created by mootoh on 2007.12.12
+//  License: revised BSD
 //
-
 #import <QSCore/QSObject.h>
 #import <QSCore/QSActionProvider.h>
 #import "TwitterPluginAction.h"

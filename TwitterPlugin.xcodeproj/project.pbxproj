@@ -13,10 +13,9 @@
 		8652FE830E796F150032DF52 /* TwitterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EAB045068128A200774DFF /* TwitterPlugin.m */; };
 		8652FE990E7975570032DF52 /* TwitterPluginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF5817B0B1D9D84003CFF55 /* TwitterPluginAction.m */; };
 		8652FEBD0E79E0F70032DF52 /* TwitterPluginSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8652FEBC0E79E0F70032DF52 /* TwitterPluginSource.m */; };
-		866641FF0D6B0A0500BD4B98 /* QSEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFA8E9C0816CCCA00A858CD /* QSEffects.framework */; };
+		8665E65B0E7B4EF400C527CE /* QSInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFA8E9D0816CCCA00A858CD /* QSInterface.framework */; };
 		869C3FC60D0EF761005B7175 /* TwitterPrefPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 869C3FC50D0EF761005B7175 /* TwitterPrefPane.nib */; };
 		869C3FCA0D0EF7C4005B7175 /* TwitterPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C3FC90D0EF7C4005B7175 /* TwitterPrefPane.m */; };
-		869C3FD30D0EF837005B7175 /* QSInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFA8E9D0816CCCA00A858CD /* QSInterface.framework */; };
 		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,12 +27,9 @@
 		7F35FF3F07F9ACD90056051D /* QSInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSInterface.framework; sourceTree = QSFrameworks; };
 		7FFA8E9C0816CCCA00A858CD /* QSEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSEffects.framework; sourceTree = QSFrameworks; };
 		7FFA8E9D0816CCCA00A858CD /* QSInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSInterface.framework; sourceTree = QSFrameworks; };
-		8616735B0D6AB31000767E2A /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /System/Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
-		861673820D6AB5C500767E2A /* qs_action.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = qs_action.rb; sourceTree = "<group>"; };
 		8618D1170D465B01003A880D /* girl_square.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = girl_square.icns; path = resource/girl_square.icns; sourceTree = "<group>"; };
 		8652FEBB0E79E0F70032DF52 /* TwitterPluginSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPluginSource.h; sourceTree = "<group>"; };
 		8652FEBC0E79E0F70032DF52 /* TwitterPluginSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterPluginSource.m; sourceTree = "<group>"; };
-		86735EC30D6C7E6D008FCDC9 /* TwitterPluginSource.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TwitterPluginSource.rb; sourceTree = "<group>"; };
 		869C3FC50D0EF761005B7175 /* TwitterPrefPane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterPrefPane.nib; sourceTree = "<group>"; };
 		869C3FC80D0EF7C4005B7175 /* TwitterPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPrefPane.h; sourceTree = "<group>"; };
 		869C3FC90D0EF7C4005B7175 /* TwitterPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterPrefPane.m; sourceTree = "<group>"; };
@@ -54,8 +50,7 @@
 				8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */,
 				7F35FF4007F9ACD90056051D /* QSCore.framework in Frameworks */,
 				7F35FF4207F9ACD90056051D /* QSFoundation.framework in Frameworks */,
-				869C3FD30D0EF837005B7175 /* QSInterface.framework in Frameworks */,
-				866641FF0D6B0A0500BD4B98 /* QSEffects.framework in Frameworks */,
+				8665E65B0E7B4EF400C527CE /* QSInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +90,6 @@
 		2E58F364FFB232C311CA0CBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8616735B0D6AB31000767E2A /* RubyCocoa.framework */,
 				DD92D38A0106425D02CA0E72 /* Cocoa.framework */,
 				7F35FF3C07F9ACD90056051D /* QSCore.framework */,
 				7F35FF3E07F9ACD90056051D /* QSFoundation.framework */,
@@ -111,8 +105,6 @@
 			children = (
 				8652FEBB0E79E0F70032DF52 /* TwitterPluginSource.h */,
 				8652FEBC0E79E0F70032DF52 /* TwitterPluginSource.m */,
-				86735EC30D6C7E6D008FCDC9 /* TwitterPluginSource.rb */,
-				861673820D6AB5C500767E2A /* qs_action.rb */,
 				BBF5817A0B1D9D84003CFF55 /* TwitterPluginAction.h */,
 				BBF5817B0B1D9D84003CFF55 /* TwitterPluginAction.m */,
 				E1EAB047068128A800774DFF /* TwitterPlugin.h */,
@@ -276,8 +268,10 @@
 					ppc,
 					i386,
 				);
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				GCC_VERSION = 4.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				SDKROOT = macosx10.5;
 			};
 			name = Release;

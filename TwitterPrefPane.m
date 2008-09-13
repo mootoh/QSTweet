@@ -2,12 +2,10 @@
 //  TwitterPrefPane.m
 //  TwitterPlugin
 //
-//  Created by Motohiro Takayama on 12/12/07.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
+//  Created by mootoh on 2007.12.12
+//  License: revised BSD
 //
-
 #import "TwitterPrefPane.h"
-
 
 @implementation TwitterPrefPane
 

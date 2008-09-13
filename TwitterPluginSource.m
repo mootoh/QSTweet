@@ -1,3 +1,10 @@
+//
+//  TwitterPluginSource.m
+//  TwitterPlugin
+//
+//  Created by mootoh on 2008.09.13
+//  License: revised BSD
+//
 #import "TwitterPluginSource.h"
 #import "TwitterPluginShared.h"
 

@@ -2,12 +2,12 @@
 //  TwitterPluginAction.m
 //  TwitterPlugin
 //
-//  Created by mootoh on 12/12/07.
+//  Created by mootoh on 2007.12.12
 //  License: revised BSD
 //
-
 #import "TwitterPluginAction.h"
 #import "TwitterPluginShared.h"
+#import <QSCore/QSTextProxy.h>
 
 @implementation TwitterPluginAction
 
