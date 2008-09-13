@@ -7,14 +7,23 @@
 //
 
 #import "TwitterPluginAction.h"
+#import "TwitterPluginShared.h"
 
 @implementation TwitterPluginAction
 
 - (QSObject *) post:(QSObject *)dObject to:(QSObject *)ind
 {
+  NSString *optional = @"";
+  if (ind) {
+    NSString *fr = [ind stringValue];
+    if (! [fr isEqualToString:PUBLIC]) {
+      optional = [NSString stringWithFormat:@"@%@ ", fr];
+    }
+  }
+
   // construct request body
-  NSString *content = [NSString stringWithFormat:@"source=QSTwitter&status=%@",
-    [dObject stringValue]];
+  NSString *content = [NSString stringWithFormat:@"source=QSTwitter&status=%@%@",
+    optional, [dObject stringValue]];
   content = [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   content = [content stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
 

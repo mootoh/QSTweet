@@ -1,4 +1,5 @@
 #import "TwitterPluginSource.h"
+#import "TwitterPluginShared.h"
 
 static int count = 0;
 
@@ -30,53 +31,85 @@ static int count = 0;
 
   NSMutableArray *objects = [NSMutableArray array];
 
-  NSString *base = [NSString stringWithFormat:@"http://twitter.com/statuses/friends/%@.xml",
-           screen_name];
+  NSString *base = [NSString stringWithFormat:@"http://twitter.com/statuses/followers/%@.xml?lite=true&", screen_name];
 
-  for (int i=1; i<2; i++)
+  for (int i=1; true; i++)
   {
     NSMutableArray *friends = [NSMutableArray array];
 
-    NSURL *friends_url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?page=%d", base, i]];
+    NSURL *friends_url = [NSURL URLWithString:[NSString stringWithFormat:@"%@page=%d", base, i]];
     NSError *err = nil;
 
     NSXMLDocument *doc = [[[NSXMLDocument alloc] initWithContentsOfURL:friends_url
       options:NSXMLDocumentTidyXML error:&err] autorelease];
     if (err) {
       NSLog(@"XML cannot be retrieved and parsed correctly.");
-      abort();
+      return nil;
     }
 
     NSArray *users = [doc nodesForXPath:@"/users/user" error:&err];
     if (err) {
       NSLog(@"XPath failed.");
-      abort();
+      return nil;
     }
+
+    if (0 == [users count]) break;
 
     NSXMLElement *user;
     for (user in users) {
       NSXMLElement *child;
-      QSObject *obj;
+      NSString *screen_name;
+      NSString *image_url;
+
       int count = 0;
       for (child in [user children]) {
         if (count == 2) break;
-        if ([[child name] isEqualToString:@"screen_name"]) {
-          NSLog(@"name = %@", [child stringValue]);
-          obj = [QSObject objectWithName:[child stringValue]];
+        NSString *cn = [child name];
+        if ([cn isEqualToString:@"screen_name"]) {
+          screen_name = [child stringValue];
           count++;
-        } else if ([[child name] isEqualToString:@"profile_image_url"]) {
-          NSLog(@"img url = %@", [child stringValue]);
+        } else if ([cn isEqualToString:@"profile_image_url"]) {
+          image_url = [child stringValue];
           count++;
         }
       }
+
+      NSAssert(screen_name, @"screen_name should exist");
+      NSAssert(image_url, @"image_url should exist");
+      QSObject *obj = [QSObject objectWithName:screen_name];
+      NSAssert(obj, @"QSObject should not be nil.");
+
       [obj setObject:@"" forType:@"TwitterPluginType"];
       [obj setPrimaryType:@"TwitterPluginType"];
+      [obj setObject:image_url forType:@"image_url"];
       [objects addObject:obj];
     }
   }
 
-  NSLog(@"objects count = %d", [objects count]);
+  // add public one
+  QSObject *obj = [QSObject objectWithName:PUBLIC];
+  [obj setObject:@"" forType:@"TwitterPluginType"];
+  [obj setPrimaryType:@"TwitterPluginType"];
+  [objects addObject:obj];
+
 	return objects;
+}
+
+- (void) setQuickIconForObject:(QSObject *)object 
+{
+  [object setIcon:nil];
+}
+
+- (BOOL) loadIconForObject:(QSObject *)object {
+  if ([[object name] isEqualToString:PUBLIC]) {
+    [object setIcon:[QSResourceManager imageNamed:@"girl_square"]];
+    return YES;
+  }
+  NSImage *img = [[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:[object objectForType:@"image_url"]]] autorelease];
+  if (! img) return false;
+  [object setIcon:img];
+
+  return true;
 }
 
 @end
