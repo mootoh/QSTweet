@@ -54,10 +54,10 @@
 
 - (NSArray *) validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)dobj
 {
-	NSLog(@"validIndirectObjectsForAction");
   return [action isEqualToString:@"TwitterPluginType"] ?
-      [NSArray arrayWithObject:[QSObject textProxyObjectWithDefaultValue:@""]]
-    : nil;
+      nil
+    : [NSArray arrayWithObject:[QSObject textProxyObjectWithDefaultValue:@""]]
+    ;
 }
 
 // callbacks
@@ -65,7 +65,7 @@
     didReceiveResponse:(NSURLResponse *)response
 {
   NSDictionary *dicHead = [(NSHTTPURLResponse *)response allHeaderFields];
-  NSLog([dicHead objectForKey:@"Status"]);
+  //NSLog([dicHead objectForKey:@"Status"]);
   [receivedData setLength:0];
 }
 
