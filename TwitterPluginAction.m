@@ -16,7 +16,7 @@
   NSString *optional = @"";
   if (ind) {
     NSString *fr = [ind stringValue];
-    if (! [fr isEqualToString:PUBLIC]) {
+    if ((![fr isEqualToString:@""] && (![fr isEqualToString:PUBLIC]))) {
       optional = [NSString stringWithFormat:@"@%@ ", fr];
     }
   }
@@ -40,14 +40,16 @@
   [urlRequest setHTTPMethod:@"POST"];
   [urlRequest setHTTPBody:[content dataUsingEncoding:NSUTF8StringEncoding]];
 
+
+  NSURLResponse *response;
+  NSError *err;
   // connect it
-  NSURLConnection *con = [NSURLConnection connectionWithRequest:urlRequest
-                                                       delegate:self];
-  if (con) {
-    receivedData = [[NSMutableData data] retain];
-  } else {
-    //NSLog(@"not connected correctly.");
-  }
+  NSData *ret = [NSURLConnection sendSynchronousRequest:urlRequest
+    returningResponse:&response
+    error:&err];
+
+	NSString *result = [[[NSString alloc] initWithData:ret encoding:NSUTF8StringEncoding] autorelease];
+  NSLog(@"NSURLConnection result = %@", result);
 
   return dObject;
 }
@@ -60,34 +62,4 @@
     ;
 }
 
-// callbacks
-- (void) connection:(NSURLConnection *)connection
-    didReceiveResponse:(NSURLResponse *)response
-{
-  NSDictionary *dicHead = [(NSHTTPURLResponse *)response allHeaderFields];
-  //NSLog([dicHead objectForKey:@"Status"]);
-  [receivedData setLength:0];
-}
-
-- (void) connection:(NSURLConnection *)connection
-  didReceiveData:(NSData *)data
-{
-  [receivedData appendData:data];
-}
-
- - (void) connection : (NSURLConnection *) connection 
- 	didFailWithError : (NSError *) error
-{
-	//NSLog(@"didFailWithError 1");
-	// [connection release];
-	[receivedData release];	
-	//NSLog(@"didFailWithError 2");
-}
-
-- (void) connectionDidFinishLoading:(NSURLConnection *)connection
-{
-//	NSLog(@"connectionDidFinishLoading: succeeded to load %d bytes", [receivedData length]);
-//	[connection release];
-	[receivedData release];
-}
 @end

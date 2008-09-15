@@ -13,7 +13,6 @@
 
 @interface TwitterPluginAction : QSActionProvider
 {
-  id receivedData;
 }
 @end
 
