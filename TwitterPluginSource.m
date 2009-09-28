@@ -38,7 +38,7 @@ static int count = 0;
 
   NSMutableArray *objects = [NSMutableArray array];
 
-  NSString *base = [NSString stringWithFormat:@"http://twitter.com/statuses/followers/%@.xml?lite=true&", screen_name];
+  NSString *base = [NSString stringWithFormat:@"http://twitter.com/statuses/friends/%@.xml?lite=true&", screen_name];
 
   for (int i=1; true; i++)
   {
