@@ -8,6 +8,7 @@
 #import "TwitterPluginAction.h"
 #import "TwitterPluginShared.h"
 #import <QSCore/QSTextProxy.h>
+#import <Growl/Growl.h>
 
 @implementation TwitterPluginAction
 
@@ -42,15 +43,26 @@
 
 
   NSURLResponse *response;
-  NSError *err;
+  NSError *err = nil;
   // connect it
   NSData *ret = [NSURLConnection sendSynchronousRequest:urlRequest
     returningResponse:&response
     error:&err];
 
+#if 0
 	NSString *result = [[[NSString alloc] initWithData:ret encoding:NSUTF8StringEncoding] autorelease];
   NSLog(@"NSURLConnection result = %@", result);
+#endif // 0
 
+   [GrowlApplicationBridge
+     notifyWithTitle:@"QSTwitter"
+     description:err ? [err localizedDescription] : @"tweeted ♪"
+     notificationName:@"New Tweet"
+     iconData:nil
+     priority:0
+     isSticky:NO
+    clickContext:nil];
+   
   return dObject;
 }
 

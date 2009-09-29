@@ -7,6 +7,11 @@
 //
 #import <QSCore/QSObject.h>
 
+@class TwitterPluginGrowlHelper;
+
 @interface TwitterPlugin : NSObject
+{
+}
+
 @end
 
