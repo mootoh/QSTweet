@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F35FF4007F9ACD90056051D /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3C07F9ACD90056051D /* QSCore.framework */; };
+		7F35FF4007F9ACD90056051D /* QSCore in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3C07F9ACD90056051D /* QSCore */; };
 		7F35FF4207F9ACD90056051D /* QSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3E07F9ACD90056051D /* QSFoundation.framework */; };
 		8618D1180D465B01003A880D /* girl_square.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8618D1170D465B01003A880D /* girl_square.icns */; };
 		8652FE830E796F150032DF52 /* TwitterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EAB045068128A200774DFF /* TwitterPlugin.m */; };
@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		32DBCF980370C29C00C91783 /* TwitterPlugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPlugin_Prefix.pch; sourceTree = "<group>"; };
-		7F35FF3C07F9ACD90056051D /* QSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSCore.framework; path = "../../../../../../../Applications/Quicksilver-dev.app/Contents/Frameworks/QSCore.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F35FF3C07F9ACD90056051D /* QSCore */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = QSCore; path = "/Applications/QS-dev.app/Contents/Frameworks/QSCore.framework/QSCore"; sourceTree = "<absolute>"; };
 		7F35FF3D07F9ACD90056051D /* QSEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSEffects.framework; sourceTree = QSFrameworks; };
 		7F35FF3E07F9ACD90056051D /* QSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSFoundation.framework; path = "../../../../../../../Applications/Quicksilver-dev.app/Contents/Frameworks/QSFoundation.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F35FF3F07F9ACD90056051D /* QSInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSInterface.framework; sourceTree = QSFrameworks; };
@@ -69,7 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */,
-				7F35FF4007F9ACD90056051D /* QSCore.framework in Frameworks */,
+				7F35FF4007F9ACD90056051D /* QSCore in Frameworks */,
 				7F35FF4207F9ACD90056051D /* QSFoundation.framework in Frameworks */,
 				8665E65B0E7B4EF400C527CE /* QSInterface.framework in Frameworks */,
 				92ED6C8110724E72006DE47B /* Growl.framework in Frameworks */,
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				DD92D38A0106425D02CA0E72 /* Cocoa.framework */,
-				7F35FF3C07F9ACD90056051D /* QSCore.framework */,
+				7F35FF3C07F9ACD90056051D /* QSCore */,
 				7F35FF3E07F9ACD90056051D /* QSFoundation.framework */,
 				7FFA8E9C0816CCCA00A858CD /* QSEffects.framework */,
 				7FFA8E9D0816CCCA00A858CD /* QSInterface.framework */,
@@ -248,7 +248,7 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(QSFrameworks)",
+					"/Applications/QS-dev.app/Contents/Frameworks",
 					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -271,7 +271,7 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(QSFrameworks)",
+					"/Applications/QS-dev.app/Contents/Frameworks",
 					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -289,7 +289,7 @@
 		7F6B3EF0085CE8DF000735A8 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "/Applications/QS-dev.app/Contents/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
