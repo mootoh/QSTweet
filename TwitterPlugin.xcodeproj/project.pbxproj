@@ -17,6 +17,8 @@
 		869C3FC60D0EF761005B7175 /* TwitterPrefPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 869C3FC50D0EF761005B7175 /* TwitterPrefPane.nib */; };
 		869C3FCA0D0EF7C4005B7175 /* TwitterPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C3FC90D0EF7C4005B7175 /* TwitterPrefPane.m */; };
 		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
+		924D847412370728001334E1 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 924D847112370728001334E1 /* NSData+Base64.m */; };
+		924D847512370728001334E1 /* TwitterXAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 924D847312370728001334E1 /* TwitterXAuth.m */; };
 		92ED6C6110724D35006DE47B /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92ED6BCD10722BA9006DE47B /* Growl.framework */; };
 		92ED6C8110724E72006DE47B /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92ED6BCD10722BA9006DE47B /* Growl.framework */; };
 		92ED6CC21072521E006DE47B /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 92ED6CC11072521E006DE47B /* Growl Registration Ticket.growlRegDict */; };
@@ -39,10 +41,8 @@
 /* Begin PBXFileReference section */
 		32DBCF980370C29C00C91783 /* TwitterPlugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPlugin_Prefix.pch; sourceTree = "<group>"; };
 		7F35FF3C07F9ACD90056051D /* QSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = QSCore.framework; path = /Applications/Quicksilver.app/Contents/Frameworks/QSCore.framework; sourceTree = "<absolute>"; };
-		7F35FF3D07F9ACD90056051D /* QSEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSEffects.framework; path = "/Users/mootoh/src/Mac/Quıcĸsıɩⅴεʀ-dev.app/Contents/Frameworks/QSEffects.framework"; sourceTree = "<absolute>"; };
 		7F35FF3E07F9ACD90056051D /* QSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSFoundation.framework; path = /Applications/Quicksilver.app/Contents/Frameworks/QSFoundation.framework; sourceTree = "<absolute>"; };
-		7F35FF3F07F9ACD90056051D /* QSInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSInterface.framework; path = "/Users/mootoh/src/Mac/Quıcĸsıɩⅴεʀ-dev.app/Contents/Frameworks/QSInterface.framework"; sourceTree = "<absolute>"; };
-		7FFA8E9C0816CCCA00A858CD /* QSEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSEffects.framework; path = "/Users/mootoh/src/Mac/Quıcĸsıɩⅴεʀ-dev.app/Contents/Frameworks/QSEffects.framework"; sourceTree = "<absolute>"; };
+		7FFA8E9C0816CCCA00A858CD /* QSEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSEffects.framework; path = /Applications/Quicksilver.app/Contents/Frameworks/QSEffects.framework; sourceTree = "<absolute>"; };
 		7FFA8E9D0816CCCA00A858CD /* QSInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSInterface.framework; path = /Applications/Quicksilver.app/Contents/Frameworks/QSInterface.framework; sourceTree = "<absolute>"; };
 		8618D1170D465B01003A880D /* girl_square.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = girl_square.icns; path = resource/girl_square.icns; sourceTree = "<group>"; };
 		8652FEBB0E79E0F70032DF52 /* TwitterPluginSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPluginSource.h; sourceTree = "<group>"; };
@@ -52,6 +52,10 @@
 		869C3FC90D0EF7C4005B7175 /* TwitterPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterPrefPane.m; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1AC9740486D14A00FE50C9 /* TwitterPlugin.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterPlugin.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		924D847012370728001334E1 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		924D847112370728001334E1 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		924D847212370728001334E1 /* TwitterXAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterXAuth.h; sourceTree = "<group>"; };
+		924D847312370728001334E1 /* TwitterXAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterXAuth.m; sourceTree = "<group>"; };
 		92ED6BCD10722BA9006DE47B /* Growl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
 		92ED6CC11072521E006DE47B /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		92ED6CC5107253C1006DE47B /* TwitterPluginGrowlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPluginGrowlHelper.h; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				32DBCF9E0370C38000C91783 /* Classes */,
+				924D846F12370728001334E1 /* xAuth */,
 				32DBCF9F0370C38200C91783 /* Other Sources */,
 				0259C582FE90428111CA0C5A /* Resources */,
 				1ED78706FE9D4A0611CA0C5A /* Products */,
@@ -119,8 +124,6 @@
 				7FFA8E9C0816CCCA00A858CD /* QSEffects.framework */,
 				7FFA8E9D0816CCCA00A858CD /* QSInterface.framework */,
 				92ED6BCD10722BA9006DE47B /* Growl.framework */,
-				7F35FF3D07F9ACD90056051D /* QSEffects.framework */,
-				7F35FF3F07F9ACD90056051D /* QSInterface.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,6 +151,17 @@
 				32DBCF980370C29C00C91783 /* TwitterPlugin_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		924D846F12370728001334E1 /* xAuth */ = {
+			isa = PBXGroup;
+			children = (
+				924D847012370728001334E1 /* NSData+Base64.h */,
+				924D847112370728001334E1 /* NSData+Base64.m */,
+				924D847212370728001334E1 /* TwitterXAuth.h */,
+				924D847312370728001334E1 /* TwitterXAuth.m */,
+			);
+			path = xAuth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +226,8 @@
 				8652FE990E7975570032DF52 /* TwitterPluginAction.m in Sources */,
 				8652FEBD0E79E0F70032DF52 /* TwitterPluginSource.m in Sources */,
 				92ED6CC7107253C1006DE47B /* TwitterPluginGrowlHelper.m in Sources */,
+				924D847412370728001334E1 /* NSData+Base64.m in Sources */,
+				924D847512370728001334E1 /* TwitterXAuth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +250,10 @@
 				GCC_PREFIX_HEADER = TwitterPlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Resources";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries & Headers/OAuthConsumer\"",
+				);
 				OTHER_LDFLAGS = "-bundle";
 				PRODUCT_NAME = TwitterPlugin;
 				WRAPPER_EXTENSION = qsplugin;
@@ -254,6 +274,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TwitterPlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries & Headers/OAuthConsumer\"",
+				);
 				OTHER_LDFLAGS = "-bundle";
 				PRODUCT_NAME = TwitterPlugin;
 				WRAPPER_EXTENSION = qsplugin;
@@ -269,23 +293,21 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.6;
 			};
 			name = Development;
 		};
 		7F6B3EF1085CE8DF000735A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.6;
+				VALID_ARCHS = "i386 ppc x86_64";
 			};
 			name = Release;
 		};

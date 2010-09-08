@@ -9,11 +9,46 @@
 #import "TwitterPluginShared.h"
 #import <QSCore/QSTextProxy.h>
 #import <Growl/Growl.h>
+#import "TwitterXAuth.h"
+
+//update these:
+#define CONSUMER_KEY @""
+#define CONSUMER_SECRET @""
+#define TWITTER_USERNAME @""
+#define TWITTER_PASSWORD @""
 
 @implementation TwitterPluginAction
 
+- (void) initializeXAuth
+{
+   twitterXAuth = [[TwitterXAuth alloc] init];
+
+   twitterXAuth.consumerKey = CONSUMER_KEY;
+   twitterXAuth.consumerSecret = CONSUMER_SECRET;
+   twitterXAuth.username = TWITTER_USERNAME;
+   twitterXAuth.password = TWITTER_PASSWORD;
+   twitterXAuth.delegate = self;
+
+   [twitterXAuth authorize];
+}
+
+- (void) twitterXAuthDidAuthorize:(TwitterXAuth *)txAuth
+{
+   NSLog(@"authorization successful");
+   NSLog(@"sending tweet");
+   [txAuth tweet:@"test tweet"];
+}
+
+- (void) twitterXAuthDidTweet:(TwitterXAuth *)twitterXAuth;
+{
+   NSLog(@"successfully tweeted");
+   exit(0);
+}
+
 - (QSObject *) post:(QSObject *)dObject to:(QSObject *)ind
 {
+   [self initializeXAuth];
+
   NSString *optional = @"";
   if (ind) {
     NSString *fr = [ind stringValue];
@@ -27,7 +62,7 @@
   content = [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   content = [content stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
   content = [content stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
-  content = [NSString stringWithFormat:@"source=QSTwitter&status=%@%@", optional, content];
+  content = [NSString stringWithFormat:@"source=QSTweet&status=%@%@", optional, content];
 
   // get screenName/password from PreferencePane
   id values = [[NSUserDefaultsController sharedUserDefaultsController] values];
