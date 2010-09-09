@@ -8,14 +8,11 @@
 #import <QSCore/QSObject.h>
 #import <QSCore/QSActionProvider.h>
 #import "TwitterPluginAction.h"
-#import "TwitterXAuth.h"
 
 #define kTwitterPluginAction @"TwitterPluginAction"
 
-@interface TwitterPluginAction : QSActionProvider <TwitterXAuthDelegate>
+@interface TwitterPluginAction : QSActionProvider
 {
-   TwitterXAuth *twitterXAuth;
-   BOOL authorized;
 }
 @end
 

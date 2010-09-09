@@ -10,7 +10,7 @@ unpack the Growl SDK and put *Growl.framework* into QSTweet/Frameworks dir.
 
 ### Build
 
-set your secret info into TwitterPluginAction.m like this:
+set your secret info into Private.h like this:
 
     #define CONSUMER_KEY @"abc"
     #define CONSUMER_SECRET @"def"

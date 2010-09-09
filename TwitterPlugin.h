@@ -6,6 +6,7 @@
 //  License: revised BSD
 //
 #import <QSCore/QSObject.h>
+#import "TwitterXAuth.h"
 
 @class TwitterPluginGrowlHelper;
 
@@ -13,5 +14,7 @@
 {
 }
 
-@end
++ (TwitterXAuth *) theTwitterXAuth;
++ (void) didFinishAuthorize;
 
+@end

@@ -56,6 +56,7 @@
 		924D847112370728001334E1 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		924D847212370728001334E1 /* TwitterXAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterXAuth.h; sourceTree = "<group>"; };
 		924D847312370728001334E1 /* TwitterXAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterXAuth.m; sourceTree = "<group>"; };
+		925E548A1238611B0081DF9A /* Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Private.h; path = ../Private.h; sourceTree = "<group>"; };
 		92ED6BCD10722BA9006DE47B /* Growl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
 		92ED6CC11072521E006DE47B /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		92ED6CC5107253C1006DE47B /* TwitterPluginGrowlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPluginGrowlHelper.h; sourceTree = "<group>"; };
@@ -160,6 +161,7 @@
 				924D847112370728001334E1 /* NSData+Base64.m */,
 				924D847212370728001334E1 /* TwitterXAuth.h */,
 				924D847312370728001334E1 /* TwitterXAuth.m */,
+				925E548A1238611B0081DF9A /* Private.h */,
 			);
 			path = xAuth;
 			sourceTree = "<group>";
