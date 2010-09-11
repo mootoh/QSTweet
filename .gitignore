@@ -4,3 +4,4 @@ build
 *.mode1v3
 *.perspectivev3
 .DS_Store
+Private.h
